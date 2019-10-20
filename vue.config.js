@@ -7,20 +7,20 @@ module.exports = {
     config.plugin('manifest').use(ManifestPlugin);
   },
   devServer: {
-    public: '0.0.0.0:8081',
+    public: '0.0.0.0:8080',
     disableHostCheck: true,
     hotOnly: false
   },
   configureWebpack: {
     entry: {
-      app: './assets/src/main.ts',
+      app: './app/assets/src/main.ts',
     },
     optimization: {
       splitChunks: false
     },
     resolve: {
       alias: {
-        '@': path.resolve('assets/src/')
+        '@': path.resolve('app/assets/src/')
       }
     }
   }

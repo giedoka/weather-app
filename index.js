@@ -1,6 +1,6 @@
 const request = require('request');
 const { port, app } = require('./config/config');
-const weatherRouter = require('./src/resources/weather/weather.router');
+const weatherRouter = require('./app/resources/weather/weather.router');
 
 app.get('/', (req, res) => {
   res.render('index');

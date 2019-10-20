@@ -10,7 +10,7 @@ app.use(express.static(path.resolve(__dirname, '../web/images')));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-app.set('views', path.resolve(__dirname, '../src/views/'));
+app.set('views', path.resolve(__dirname, '../app/views/'));
 app.set('view engine', 'hbs');
 
 module.exports = {
