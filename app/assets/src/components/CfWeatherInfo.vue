@@ -1,7 +1,7 @@
 <template>
   <div class="cf-weather-info">
     <h2>
-      <template v-if="weather && weather.city.main">{{ Math.round(weather.city.main.temp) }}</template>
+      <template v-if="weather && weather.city && weather.city.main">{{ Math.round(weather.city.main.temp) }}</template>
       <template v-else>--</template>
       &#186C
     </h2>

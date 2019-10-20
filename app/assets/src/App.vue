@@ -4,6 +4,7 @@
     <CfWeatherInfo
       :weather="weather"
     ></CfWeatherInfo>
+    <p v-if="errorMessage">{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -23,10 +24,14 @@
   export default class App extends Vue {
     public apiService: ApiServiceInterface = new ApiService();
     public weather: any = null;
+    public errorMessage = null;
 
     public onSearch(query: string) {
+      this.errorMessage = null;
       this.apiService.getWeather(query).then((response: any) => {
         this.weather = response.data;
+      }).catch((error: any) => {
+        this.errorMessage = error.response.data.error.message;
       });
     }
   }
